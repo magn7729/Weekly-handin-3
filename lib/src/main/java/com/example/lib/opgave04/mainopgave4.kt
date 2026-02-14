@@ -9,14 +9,18 @@ fun main() {
         "orange", "apple", "orange", "banana"
     )
 
+    // Laves mutableMap
+    // Key = ord
+    // Value = antal gange ordet forekommer
     val frequency = mutableMapOf<String, Int>()
 
+    // Går igennem alle ord i listen
     for (word in words) {
 
         if (frequency.containsKey(word)) {
-            frequency[word] = frequency[word]!! + 1
+            frequency[word] = frequency[word]!! + 1 // Tager nuværende værdi og lægger 1 til
         } else {
-            frequency[word] = 1
+            frequency[word] = 1 // Hvis ordet ikke findes så starter den bare på 1
         }
     }
 

@@ -2,16 +2,19 @@ package com.example.lib.opgave02
 
 import java.time.LocalDate
 
+// RedditPost bruger Comparable
+// Dette gør at objekter kan sammelignes og sorteres
 class RedditPost(
-    author: String,
-    title: String
+    author: String, // Bliver modtaget fra constructor
+    title: String // Bliver modtaget fra constructor
 ) : Comparable<RedditPost> {
 
     // Private attributes
+    // Dato kører når objektet oprettes
     private val date: LocalDate = LocalDate.now()
     private var author: String = author
     private var title: String = title
-    private var balance: Int = 1
+    private var balance: Int = 1 // Balance starter altid på 1
 
     // Min "Getters"
     fun getDate(): LocalDate {
@@ -52,11 +55,13 @@ class RedditPost(
         balance--
     }
 
-    // Sorting
+    // compareTo bruges når vi kalder posts.sorted()
+    // Den sammenligner balance mellem to RedditPost-objekter
     override fun compareTo(other: RedditPost): Int {
         return this.balance.compareTo(other.balance)
     }
 
+// Bestemmer hvordan objektet vises når vi printer det
     override fun toString(): String {
         return "Title: $title, Author: $author, Balance: $balance, Date: $date"
     }

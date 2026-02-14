@@ -12,7 +12,7 @@ class Inventory {
     }
 
     fun removeProduct(name: String) {
-        products.removeIf { it.name == name }
+        products.removeIf { it.name == name } // Gennemgår listen og fjerner alle produkter hvor betingelsen er true
     }
 
     fun revealInventory() {
