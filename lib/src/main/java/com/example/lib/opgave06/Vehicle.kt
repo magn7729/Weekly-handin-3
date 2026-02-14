@@ -144,3 +144,9 @@ class TrafficManager {
         }
     }
 }
+
+// Overordnet //
+// Jeg har ændret koden, så TrafficManager ikke længere selv undersøger hvilken type køretøj det er,
+// men i stedet bruger polymorfi via en update() metode i hver klasse.
+// Derudover har jeg forbedret encapsulation ved at gøre fuelLevel beskyttet med private set, så det
+// ikke kan ændres direkte udefra.
